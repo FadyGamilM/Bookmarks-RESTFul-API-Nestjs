@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  # the name of the container
+  dev-db:
+    image: postgres:13
+    # we can connect the db in our machine at port 5434
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - techBricks
+networks:
+  techBricks:
